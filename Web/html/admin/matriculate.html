@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>查看考生录取情况</title>
+    <script src="../../js/lib/vue.js"></script>
+    <script src="../../js/lib/axios.min.js"></script>
+    <style>
+        .center{
+            min-width: 1660px;
+            min-height: 732px;
+        }
+        .lab_z>span{
+            width: 230px;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <div class="left"></div>
+        <div class="center">
+            <nav aria-label="breadcrumb breadcrumb1">
+                <ol class="breadcrumb breadcrumb1">
+                    <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                    <li class="breadcrumb-item active"><a href="index.html">管理员端</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">查看考生录取情况</li>
+                </ol>
+            </nav>
+            <h3>考生录取情况</h3>
+
+            <div id="students">
+                <div class="list">
+                    <div class="lab_z item">
+                        <span>考号</span>
+                        <span>姓名</span>
+                        <span>专业</span>
+                        <span>总分</span>
+                        <span>录取公司编号</span>
+                        <span>录取分数</span>
+                        <span>是否录取</span>
+                    </div>
+                <div class="list ">
+                    <div v-for="(item,index) in matriculate" class="item lab_z" :key="item.studentId" style="margin-top: 0px; margin-bottom: 0px; border-top: none;">
+                        <span>{{item.studentId}}</span>
+                        <span>{{item.name}}</span>
+                        <span>{{item.profession}}</span>
+                        <span>{{item.sumScore}}</span>
+                        <span>{{item.conditionId}}</span>
+                        <span>{{item.fractions}}</span>
+                        <span :style="'color:'+item.allowColor">{{item.allow}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+    <script src="../../js/address.js"></script>
+    <script src="../../js/app/admin/getMatriculate.js"></script>
+    <script src="../../js/app/admin/check_login.js"></script>
+</html>

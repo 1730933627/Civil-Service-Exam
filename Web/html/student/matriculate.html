@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询学生录取情况</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/pops.js"></script>
+</head>
+<body>
+    <div class="root" id="root">
+        <div class="center">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                    <li class="breadcrumb-item active"><a href="index.html">学生端</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">录取信息查询</li>
+                </ol>
+            </nav>
+            <h3>录取信息查询</h3>
+            <form>
+                <div class="item">
+                    <label for="studentId">准考证号</label>
+                    <input type="text" id="studentId" class="form-control">
+                </div>
+
+                <button type="button" class="btn btn-primary" id="submin">查询</button>
+            </form>
+            <div id="pops"></div>
+        </div>
+    </div>
+</body>
+    <script src="../../js/address.js"></script>
+    <script src="../../js/app/student/matriculate.js"></script>
+</html>

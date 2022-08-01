@@ -1,0 +1,43 @@
+.item_zf>div{
+    display: flex;
+}
+
+.item_zf>div>label{
+    width: 100px;
+    margin-bottom: 40px;
+}
+label{
+line-height: 30px;
+display: inline-block;
+margin-left: 5px;
+margin-right:15px;
+color: #000;
+}
+.radio_type{
+width: 30px;
+height: 30px;
+appearance: none;
+position: relative;
+}
+.radio_type:before{
+content: '';
+width: 30px;
+height: 30px;
+border: 1px solid #7d7d7d;
+display: inline-block;
+border-radius: 50%;
+vertical-align: middle;
+}
+.radio_type:checked:before{
+content: '';
+width: 30px;
+height: 30px;
+background:rgba(116, 185, 255,1.0);
+display: inline-block;
+border-radius: 50%;
+vertical-align: middle;
+}
+
+.radio_type:checked+label{
+color: #000;
+}

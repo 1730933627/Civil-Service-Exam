@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.root{
+    width: 100%;
+    min-width: 1660px;
+    height: 100vh;
+    min-height: 732px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: #f2eff8;
+}
+
+.breadcrumb{
+    /* 上边框颜色*/
+    background-color: rgba(116, 185, 255,0.4) !important;
+}
+.breadcrumb1{
+    background-color: #dfe6e9 !important
+}
+h3{
+    text-align: center;
+}
+.center{
+    width: 30%;
+    min-width: 640px;
+    min-height: 500px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    
+}
+ul{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-size: 30px;
+    margin: 20px;
+    cursor: default;
+}
+.links{
+    list-style: none;
+}
+.link{
+    margin: 25px 50px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.link a{
+    color: gray;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+a:hover{
+    transition: color 0.3s ease-in-out;
+}
+form{
+    margin: 50px;
+}
+label{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+ol{
+    font-size: 20px;
+}
+#table{
+    display: none;
+}
+#submin{
+    margin: 30px 0;
+}
+.pops_f{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pops{
+    display: flex;
+    justify-content:center;
+}
+.pops_z{
+    display: flex;
+}
+@keyframes popUpIn{
+    0%{transform: scale(0);}
+    90%{transform: scale(1.1);}
+    100%{transform: scale(1);}
+}
+.popUp{
+    margin-right: 10px;
+    padding: 10px;
+    animation: popUpIn 0.3s ease-in-out;
+    min-width: 100px;
+    color: black !important;
+    background-color: rgba(116, 185, 255,0.3);    
+    text-align: center;
+    Border-radius:10px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+a{
+    color: #6c757d !important;
+    text-decoration: none !important;
+}
+#students>.list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 733px;
+    overflow-y:auto;
+
+}
+#students .list .item{
+    padding: 4.5px;
+    border: 2px solid #74b9ff;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+#students .list .item span{
+    font-size: 18px;
+    display: inline-block;
+    padding: 2px 10px;
+    min-width: 150px;
+    margin: 0 20px;
+}
+#students .list .item input[type=checkbox]{
+    text-align: center;
+    height: 20px;
+    margin: 0 0 0 5px;
+    zoom: 200%;
+}
+#students .buttonDiv{
+    width: 100%;
+    text-align: center;
+    background-color: #e9ecef;
+}
+#students .buttonDiv button{
+    margin: 10px;
+    width: 150px;
+}
+
+.lab_z{
+    padding: 0 20 !important;
+}
+
+/* .links{
+    background-color: #fff;
+    color: black;
+    width: 300px;
+} */
+.link a {
+    background-color: #fff !important;
+    color: black;
+    width: 300px;
+    font-size: 20px;
+}

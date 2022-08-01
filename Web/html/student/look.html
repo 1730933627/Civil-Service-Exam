@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>录入学生信息</title> 
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/student.css">
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/pops.js"></script>
+</head>
+<body>
+    <div class="root" id="root">
+        <div class="center">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                    <li class="breadcrumb-item active"><a href="index.html">学生端</a></zli>
+                    <li class="breadcrumb-item active" aria-current="page">考生信息查询</li>
+                </ol>
+            </nav>
+            <h3>考生信息查看</h3>
+            <form class="item_zf" >
+                <div class="item">
+                    <label for="name">姓名 :</label>
+                    <input type="text" id="name" class="form-control">
+                </div>
+                
+                <div class="item">
+                    <label for="number">身份证 :</label>
+                    <input type="text" id="number" class="form-control">
+                </div>
+                
+                <div class="pops_z" style="width: 100%;">
+                    <button type="button" class="btn btn-primary" id="submin" style="width: 20%;">查询</button>
+                    <div class="pops_f" style="width: 80%;">
+                        <div id="pops"></div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+    <script src="../../js/address.js"></script>
+    <script src="../../js/app/student/look.js"></script>
+</html>

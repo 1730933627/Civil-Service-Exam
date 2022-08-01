@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>公务员成绩录取系统</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="root">
+        <div class="center">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb1">
+                    <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">管理员端</li>
+                </ol>
+            </nav>
+            <h3>公务员录取系统</h3>
+            <ul class="links" style="padding: 20px 0;">
+                <li class="link"><a href="student_manage.html" class="btn btn-primary" style="background-color: #fff;color: black;width: 300px;">查看考生信息</a></li>
+                <li class="link"><a href="scoreIn.html" id="scoreIn" class="btn btn-primary" style="background-color: #fff;color: black;width: 300px;">考生成绩录入</a></li>
+                <li class="link"><a href="matriculate.html" class="btn btn-primary" style="background-color: #fff;color: black;width: 300px;">查看考生录取情况</a></li>
+                <li class="link" id="loginOut"><a class="btn btn-primary" style="background-color: #fff;color: black;width: 300px;">退出登陆</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    if(document.cookie.search("permission=0")!=-1){
+    }else if(document.cookie.search("permission=1")!=-1){
+        document.getElementById("scoreIn").href = "javascript:alert('权限不足')";
+    }
+    document.getElementById("loginOut").onclick = ()=>{
+        document.cookie = "login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=127.0.0.1;";
+        document.cookie = "permission=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=127.0.0.1;";
+        window.location.reload();
+    }
+</script>
+<script src="../../js/app/admin/check_login.js"></script>
+
+</html>

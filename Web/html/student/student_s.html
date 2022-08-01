@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>查询学生录取情况</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+      
+    <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/pops.js"></script>
+
+</head>
+<body>
+    <div class="root" id="root">
+        <div class="center" id="pdfDom">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                    <li class="breadcrumb-item active"><a href="index.html">学生端</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">录取结果</li>
+                </ol>
+            </nav>
+            <h3>录取结果</h3>
+            <form>
+                <div id="table">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">名称</th>
+                            <th scope="col">信息</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>考号</td>
+                            <td id="table_student"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>姓名</td>
+                            <td id="table_name"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>专业</td>
+                            <td id="table_profession"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>考试总分</td>
+                            <td id="table_sumScore"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td id="table_condition">录取公司ID</td>
+                            <td id="table_conditionId"></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>录取结果</td>
+                            <td id="table_allow"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <div id="pops"></div>
+            </form>
+        </div>
+    </div>
+
+    <button id="download" style=" position:fixed; top:50%; width:130px;height:80px;background:#ffd7e5" >导出为PDF文件</button>
+    <div id="pdfDom">
+        <table>
+            <th></th>
+        </table>
+    </div>
+</body>
+
+<script src="../../js/address.js"></script>
+<script src="../../js/app/student/student_s.js"></script>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>录入学生信息</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/student.css">
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/pops.js"></script>
+    <script src="../../js/lib/axios.min.js"></script>
+    <script src="../../js/lib/vue.js"></script>
+    <style>
+        .lable_one{
+            margin-left: -20px;
+            margin-right:130px;
+        }
+        .lable_two{
+            margin-left: -20px;
+        }
+        .lable_three{
+            width: 80%;
+            margin-left: -20px;
+
+        }
+        .lable_four{
+            width: 80% !important;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="root" id="root">
+        <div class="center">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">
+                        <a href="../../../Web/index.html">主页</a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                        <a href="index.html">学生端</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">考生信息</li>
+                </ol>
+            </nav>
+            <h3>考生信息</h3>
+            <form class="item_zf" id="infos">
+                <div class="item">
+                    <label>姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 名 : </label>
+                    <label class="lable_one"> {{datas.name}}</label>
+                    <label>性别 :</label>
+                    <label class="lable_two"> {{datas.sex}}</label>
+                </div>
+
+                <div class="item">
+                    <label >身 &nbsp份&nbsp 证 :</label>
+                    <label class="lable_one"> {{datas.number}}</label>
+                    <label>专业 :</label>
+                    <label class="lable_two"> {{datas.profession}}</label>
+                </div>
+
+                <div class="item">
+                    <label>准考证号 :</label>
+                    <label class="lable_one"> {{datas.studentId}}</label>
+                    <label>信息审核 :</label>
+                    <label class="lable_two" v-text="allow?'已通过':'审核中'"></label>
+                </div>
+                <div class="item" v-if="allow">
+                    <label>考试地点 :</label>
+                    <label class="lable_four">天水师范学院二号教学楼401</label>
+                </div>
+                <div class="item" v-if="allow">
+                    <label>报考时间 :</label>
+                    <label class="lable_four">{{datas.date}}</label>
+                </div>
+            </form>
+        </div>
+        <button v-if="allow" id="download" style=" position:fixed; top:50%;left:0; width:130px;height:80px;background:#ffd7e5" @click="download">下载准考证</button>
+    </div>
+</body>
+    <script src="../../js/address.js"></script>
+    <script src="../../js/app/student/look_data.js"></script>
+</html>

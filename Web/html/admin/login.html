@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <title>公务员成绩录取系统</title>
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/pops.js"></script>
+</head>
+<body>
+    <div class="root">
+        <div class="center">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb1">
+                    <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">管理员端</li>
+                </ol>
+            </nav>
+            <h3>请登陆账号</h3>
+            <form>
+                <div class="item">
+                    <label for="account">账号</label>
+                    <input type="text" id="account" class="form-control">
+                </div>
+                <div class="item">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" class="form-control">
+                </div>
+                <button type="button" class="btn btn-primary" id="submin">登陆</button>
+                <div id="pops"></div>
+            </form>
+
+        </div>
+    </div>
+</body>
+    <script src="../../js/address.js"></script>
+    <script src="../../js/app/admin/login.js"></script>
+</html>

@@ -1,0 +1,131 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <title>公务员成绩录取系统</title>
+        <script src="../../js/lib/jquery.min.js"></script>
+        <script src="../../js/lib/axios.min.js"></script>
+        <script src="../../js/lib/vue.js"></script>
+        <script src="../../js/pops.js"></script>
+        <style>
+            .but_z {
+                border: none;
+                background-color: rgb(255, 0, 255, 0);
+                color: black;
+                font-size: 25px;
+                font-size: 2rem;
+                color: cornflowerblue;
+            }
+
+            .but_z:hover {
+                cursor: pointer
+            }
+
+            .but:active {
+                color: #fff;
+            }
+
+            .center {
+                width: 85%;
+                min-width: 1800px;
+                min-height: 900px;
+            }
+
+            .cz_z {
+                margin-bottom: 20px;
+            }
+
+            .cz_z .font {
+                font-size: 23px;
+                padding-right: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="root">
+            <div class="left"></div>
+            <div class="center">
+                <nav aria-label="breadcrumb breadcrumb1">
+                    <ol class="breadcrumb breadcrumb1" style="align-items: center;">
+                        <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                        <li class="breadcrumb-item active"><a href="index.html">管理员端</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">考生管理</li>
+                    </ol>
+                </nav>
+
+
+                <div id="students">
+                    <div class="list">
+                        <div class="cz_z">
+                            <div class="input-group mb-1" style="width: 100%;">
+                                <span class="font">编号:</span>
+                                <input type="text" class="form-control" style="box-shadow: none;" v-model="findId"
+                                    @keydown.enter="getById">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                        style="width: 50px;" @click="getById">查</button>
+                                </div>
+                                <span class="font" style="margin-left: 20px;">姓名:</span>
+                                <input type="text" class="form-control" style="box-shadow: none" v-model="findName">
+                                <span class="font" style="margin-left: 20px;">分类</span>
+                                <select name="sort" id="sort" style="width: 100px;" v-model="sortText">
+                                    <option value="全部" selected>全部</option>
+                                    <option value="行政">行政</option>
+                                    <option value="法律">法律</option>
+                                    <option value="财经">财经</option>
+                                </select>
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                    @click="allowSubmit" style="width: 70px; margin-left: 650px; ">授权</button>
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                    @click="modify" style="width: 70px; ">修改</button>
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                    @click="scoreIn" style="width: 70px; ">成绩</button>
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                    @click="deleteSubmit" style="width: 70px;">删除</button>
+                            </div>
+                        </div>
+                        <div class="item" id="checkbox">
+                            <span style="margin-left: 60px;">考号</span>
+                            <span>姓名</span>
+                            <span>性别</span>
+                            <span>专业</span>
+                            <span>身份证号</span>
+                            <span>日期</span>
+                            <span>电话</span>
+                            <span>学历</span>
+                            <span>授权</span>
+                        </div>
+                        <div v-for="(item, index) in studentFilter" class="item" :key="item.studentId"
+                            style="margin-top: 0;margin-bottom: 0; border-top: none;">
+                            <input type="checkbox" name="checkbox" id="checkbox" @change="onChange"
+                                :value="item.studentId">
+                            <span>{{ item.studentId }}</span>
+                            <span>{{ item.name }}</span>
+                            <span>{{ item.sex }}</span>
+                            <span>{{ item.profession }}</span>
+                            <span>{{ item.number }}</span>
+                            <span>{{ item.date }}</span>
+                            <span>{{ item.numberP }}</span>
+                            <span>{{ item.education }}</span>
+                            <span :style="'color:' + item.allowColor">{{ item.allow }}</span>
+                            <!-- <img src="../../image/x.svg" @click="deleteStudent"  alt="Bootstrap" width="32" height="32" class="but_z"> -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="../../js/app/admin/check_login.js"></script>
+    <script src="../../js/address.js"></script>
+    <script src="../../js/app/admin/student_manage.js"></script>
+
+    </html>
+

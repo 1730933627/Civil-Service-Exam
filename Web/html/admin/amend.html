@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>录入学生信息</title> 
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/student.css">
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/pops.js"></script>
+    <script src="../../js/lib/axios.min.js"></script>
+    <script src="../../js/lib/vue.js"></script>
+</head>
+<body>
+    <div class="root" id="root" id="app">
+        <div class="center">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb1">
+                    <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                    <li class="breadcrumb-item active"><a href="index.html">管理员端</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="student_manage.html">人员管理</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">考生信息修改</li>
+                </ol>
+            </nav>
+            <h3>考生信息修改</h3>
+            <form class="item_zf" id="amend">
+                <div class="item">
+                    <label style="margin-right: 0;">编号 :</label>
+                    <label style="margin-left: 0;">{{person.studentId}}</label>
+                </div>
+                <div class="item">
+                    <label for="name">姓名 :</label>
+                    <input type="text" id="name" class="form-control" v-model="person.name">
+                </div>
+                <div class="item">
+                    <label for="sex">性别 :</label>
+                    <input class="radio_type" type="radio" name="sex" id="sex_boy" value="男" checked="checked" v-model="person.sex"/> <label for="sex_boy">男</label>
+                    <input class="radio_type" type="radio" name="sex" id="sex_gril" value="女" v-model="person.sex"/> <label for="sex_gril">女</label>
+                </div>
+                <div class="item">
+                    <label for="number">身份证 :</label>
+                    <input type="text" id="number" class="form-control" v-model="person.number">
+                </div>
+                <div class="item">
+                    <label for="education">学历 :</label>
+                    <input type="text" id="education" class="form-control" v-model="person.education">
+                </div>
+                <div class="item">
+                    <label for="province">省地区 :</label>
+                    <input type="text" id="province" class="form-control" v-model="person.province">
+                </div>
+                <div class="item">
+                    <label for="numberP">电话号 :</label>
+                    <input type="text" id="numberP" class="form-control" v-model="person.numberP">
+                </div>
+                <div class="item">
+                    <label for="profession">专业 :</label>
+                    <select id="profession" class="form-control form-control-lg" v-model="person.profession">
+                        <option value="NULL" selected>修改专业</option>
+                        <option value="行政">行政</option>
+                        <option value="法律">法律</option>
+                        <option value="财经">财经</option>
+                    </select>
+                </div>
+                <div class="pops_z" style="width: 100%;">
+                    <button type="button" class="btn btn-primary" id="submin" style="width: 20%;" @click="submit">确定修改</button>
+                    <div class="pops_f" style="width: 80%;">
+                        <div id="pops"></div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+    <script src="../../js/address.js"></script>
+    <script src="../../js/app/admin/amend.js"></script>
+</html>

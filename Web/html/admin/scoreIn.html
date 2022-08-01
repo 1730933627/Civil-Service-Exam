@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>录入学生成绩</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <script src="../../js/lib/jquery.min.js"></script>
+    <script src="../../js/pops.js"></script>
+    <script src="../../js/lib/axios.min.js"></script>
+    <script src="../../js/lib/vue.js"></script>
+    <script src="../../js/app/admin/check_login.js"></script>
+</head>
+<style>
+    .form-control{
+        width:70%;
+        margin-left: 20px;
+    }
+    form>div{
+        display: flex;
+        margin-bottom: 30px;
+    }
+    form>div:last-child{
+        margin-bottom: -10px;
+        
+    }
+    label{
+        min-width: 120px;
+    }
+</style>
+<body>
+    <div class="root" id="root">
+        <div class="left"></div>
+        <div class="center">
+            <nav aria-label="breadcrumb breadcrumb1">
+                <ol class="breadcrumb breadcrumb1">
+                    <li class="breadcrumb-item active"><a href="../../index.html">主页</a></li>
+                    <li class="breadcrumb-item active"><a href="index.html">管理员端</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">录入学生成绩</li>
+                </ol>
+            </nav>
+            <h3>录入学生成绩</h3>
+            <form>
+                <div class="item" style="display: flex;">
+                    <label for="studentId" style="font-size: 21px;">考生学号: </label>
+                    <input type="text" id="studentId" class="form-control">
+                </div>
+                <div class="item">
+                    <label for="score1">政&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp治:</label>
+                    <input type="text" id="score1" class="form-control">
+                </div>
+                <div class="item">
+                    <label for="score2">英&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp语:</label>
+                    <input type="text" id="score2" class="form-control">
+                </div>
+                <div class="item" style="margin-bottom: 0px;">
+                    <label for="score3">专&nbsp&nbsp业&nbsp&nbsp课:</label>
+                    <input type="text" id="score3" class="form-control">
+                </div>
+                <div class="pops_z" style="width: 100%;">
+                    <button type="button" class="btn btn-primary" id="submin" style="width: 20%;">录入</button>
+                    <div class="pops_f" style="width: 80%;">
+                        <div id="pops"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+    <script src="../../js/address.js"></script>
+    <script src="../../js/app/admin/scoreIn.js"></script>
+</html>
